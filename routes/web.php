@@ -31,3 +31,5 @@ Route::resource('rara','Rara');
 Route::resource('mahasiswa','Mahasiswa');	
 Route::resource('user','User');
 
+
+

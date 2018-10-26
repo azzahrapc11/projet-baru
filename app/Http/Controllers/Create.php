@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ModelMahasiswa;
 
-class Mahasiswa extends Controller
+class Mahasiswa_Create_Seeder extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class Mahasiswa extends Controller
     public function index()
     {
         $data = ModelMahasiswa::all();
-		return view ('mahasiswa',compact('data'));
+		return view ('mahasiswa_create',compact('data'));
     }
 
     /**
@@ -37,12 +37,12 @@ class Mahasiswa extends Controller
     public function store(Request $request)
     {
         $data = new ModelMahasiswa();
-$data->nama = $request->nama;
-$data->email = $request->email;
-$data->nohp = $request->nohp;
-$data->alamat = $request->alamat;
-$data->save();
-return redirect()->route('mahasiswa.index')->with('alert-success','Berhasil Menambahkan Data!');
+	$data->nama = $request->nama;
+	$data->email = $request->email;
+	$data->nohp = $request->nohp;
+	$data->alamat = $request->alamat;
+	$data->save();
+	return redirect()->route('mahasiswa.index')->with('alert-success','Berhasil Menambahkan Data!');
     }
 
     /**
