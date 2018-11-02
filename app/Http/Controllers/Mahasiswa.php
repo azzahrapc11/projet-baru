@@ -39,7 +39,7 @@ class Mahasiswa extends Controller
         $data = new ModelMahasiswa();
 $data->nama = $request->nama;
 $data->email = $request->email;
-$data->nohp = $request->nohp;
+$data->no_hp = $request->no_hp;
 $data->alamat = $request->alamat;
 $data->save();
 return redirect()->route('mahasiswa.index')->with('alert-success','Berhasil Menambahkan Data!');
@@ -64,7 +64,8 @@ return redirect()->route('mahasiswa.index')->with('alert-success','Berhasil Mena
      */
     public function edit($id)
     {
-        //
+     $data = ModelMahasiswa::where('id',$id)->get();
+		return view ('mahasiswa_edit',compact('data'));
     }
 
     /**
@@ -76,8 +77,16 @@ return redirect()->route('mahasiswa.index')->with('alert-success','Berhasil Mena
      */
     public function update(Request $request, $id)
     {
-        //
+          $data = ModelMahasiswa::where('id',$id)->first();
+	$data->nama = $request->nama;
+	$data->email = $request->email;
+	$data->no_hp = $request->no_hp;
+	$data->alamat = $request->alamat;
+	$data->save();
+	return redirect()->route('mahasiswa.index')->with('alert-success','Data berhasil diubah!');
     }
+
+    
 
     /**
      * Remove the specified resource from storage.
@@ -87,6 +96,8 @@ return redirect()->route('mahasiswa.index')->with('alert-success','Berhasil Mena
      */
     public function destroy($id)
     {
-        //
+        $data = ModelMahasiswa::where('id',$id)->first();
+		$data->delete();
+		return redirect()->route('mahasiswa.index')->with('alert-success','Data berhasil dihapus!');
     }
 }

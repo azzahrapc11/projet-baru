@@ -31,7 +31,7 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->nama }}</td>
                         <td>{{ $d->email }}</td>
-                        <td>{{ $d->nohp }}</td>
+                        <td>{{ $d->no_hp }}</td>
                         <td>{{ $d->alamat }}</td>
 					
                         <td>

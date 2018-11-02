@@ -36,15 +36,28 @@
     <aside id="sideBar">
         <ul class="main-nav">
             <!-- Your Logo Or Site Name -->
-            <li class="nav-brand">
-                <a href="/">Home</a>
+             <li class="main-nav">
+			 <a href="/"> Home</a>
+               <li>
+			<a href="/halamandua"> Halaman Dua</a>
+			</li>
+			<li>
+			<a href="/halamantiga"> Halaman Tiga</a>
+			</li>
             </li>
-            <li>
-                <a href="/halamandua">- Halaman Dua</a>
+			<li class="main-nav">
+                <a href="{{ route('mahasiswa.index') }}">Mahasiswa</a>
+				<ul class="main-nav">
+					<li><a href="{{ route('mahasiswa.create') }}">create</a></li>
+				</ul>
             </li>
-            <li>
-                <a href="/halamantiga">- Halaman Tiga</a>
+			<li class="main-nav">
+                <a href="/user">User</a>
+				<ul class="main-nav">
+					<li><a href="{{ route('user.create') }}">create</a></li>
+				</ul>
             </li>
+			
         </ul>
     </aside>
 

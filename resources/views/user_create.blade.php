@@ -5,9 +5,9 @@
         <!-- Add Your Content Inside -->
         <div class="content">
             <!-- Remove This Before You Start -->
-            <h1>Tambah Mahasiswa</h1>
+            <h1>Tambah User</h1>
             <hr>
-            <form action="{{ route('mahasiswa.store') }}" method="post">
+            <form action="{{ route('user.store') }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nama">Nama:</label>
@@ -18,12 +18,12 @@
                     <input type="text" class="form-control" id="usr" name="email">
                 </div>
 				 <div class="form-group">
-                    <label for="no_hp">No_hp:</label>
-                    <input type="number" class="form-control" id="usr" name="no_hp">
+                    <label for="no_hp">Username:</label>
+                    <input type="text" class="form-control" id="usr" name="username">
                 </div>
 				 <div class="form-group">
-                    <label for="alamat">Alamat:</label>
-                    <input type="text" class="form-control" id="usr" name="alamat">
+                    <label for="alamat">Password:</label>
+                    <input type="text" class="form-control" id="usr" name="password">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
