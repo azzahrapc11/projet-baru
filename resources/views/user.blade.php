@@ -18,11 +18,9 @@
                     <th>No.</th>
                     <th>Nama</th>
                     <th>Email</th>
-                    <th>No. HP</th>
-                    <th>Alamat</th>
-                    <th>Aksi</th>
-					<th>Username</th>
+                    <th>Username</th>
 					<th>Password</th>
+					<th>Aksi</th>
 				
                 </tr>
                 </thead>
@@ -33,10 +31,8 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->nama }}</td>
                         <td>{{ $d->email }}</td>
-                        <td>{{ $d->nohp }}</td>
-                        <td>{{ $d->alamat }}</td>
-						<td>{{ $d->username }}</td>
-						<td>{{ $d->password }}</td>
+                        <td>{{ $d->username }}</td>
+                        <td>{{ $d->password }}</td>
 					
                         <td>
                             <form action="{{ route('user.destroy', $d->id) }}" method="post">

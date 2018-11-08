@@ -64,7 +64,8 @@ class User extends Controller
      */
     public function edit($id)
     {
-        //
+       $data = modeluser::where('id',$id)->get();
+		return view ('user_edit',compact('data'));
     }
 
     /**
@@ -76,9 +77,14 @@ class User extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
-
+         $data = modeluser::where('id',$id)->first();
+	$data->nama = $request->nama;
+	$data->email = $request->email;
+	$data->username = $request->username;
+	$data->password = $request->password;
+	$data->save();
+	return redirect()->route('user.index')->with('alert-success','Data berhasil diubah!');
+	}
     /**
      * Remove the specified resource from storage.
      *
@@ -87,6 +93,8 @@ class User extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = modeluser::where('id',$id)->first();
+		$data->delete();
+		return redirect()->route('user.index')->with('alert-success','Data berhasil dihapus!');
     }
 }

@@ -5,10 +5,10 @@
         <!-- Add Your Content Inside -->
         <div class="content">
             <!-- Remove This Before You Start -->
-            <h1>Edit Mahasiswa</h1>
+            <h1>Edit User</h1>
             <hr>
             @foreach($data as $datas)
-            <form action="{{ route('mahasiswa.update', $datas->id) }}" method="post">
+            <form action="{{ route('user.update', $datas->id) }}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="form-group">
@@ -20,13 +20,12 @@
                     <input type="email" class="form-control" id="email" name="email" value="{{ $datas->email }}">
                 </div>
                 <div class="form-group">
-                    <label for="nohp">No Hp:</label>
-                    <input type="text" class="form-control" id="nohp" name="no_hp" value="{{ $datas->no_hp }}">
+                    <label for="no_hp">Username:</label>
+                    <input type="text" class="form-control" id="usr" name="username" value="{{ $datas->username }}">
                 </div>
-				 
-                <div class="form-group">
-                    <label for="alamat">Alamat:</label>
-                    <textarea class="form-control" id="alamat" name="alamat">{{ $datas->alamat }}</textarea>
+				 <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="text" class="form-control" id="usr" name="password" value="{{ $datas->password }}">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
