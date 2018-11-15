@@ -57,6 +57,12 @@
 					<li><a href="{{ route('user.create') }}">create</a></li>
 				</ul>
             </li>
+			<li class="main-nav">
+                <a href="/user">Files</a>
+				<ul class="main-nav">
+					<li><a href="{{ route('files.create') }}">create</a></li>
+				</ul>
+            </li>
 			
         </ul>
     </aside>

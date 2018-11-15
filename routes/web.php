@@ -29,6 +29,7 @@ Route::get('/halamantiga', function () {
 
 Route::resource('mahasiswa','Mahasiswa');	
 Route::resource('user','User');
+Route::resource('files','File');
 
 
 
